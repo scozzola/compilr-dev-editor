@@ -1,0 +1,71 @@
+{
+  "name": "@compilr-dev/editor",
+  "version": "0.0.1",
+  "description": "AI-powered terminal markdown editor with Notion-style slash commands and 418 themes",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "bin": {
+    "edit": "./bin/edit.js"
+  },
+  "files": [
+    "dist",
+    "bin",
+    "LICENSE",
+    "README.md"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "start": "node bin/edit.js",
+    "lint": "eslint src --ext .ts",
+    "lint:fix": "eslint src --ext .ts --fix",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "clean": "rm -rf dist",
+    "prepublishOnly": "npm run clean && npm run build"
+  },
+  "keywords": [
+    "terminal",
+    "editor",
+    "markdown",
+    "cli",
+    "ai",
+    "notion",
+    "vim-alternative",
+    "slash-commands",
+    "themes"
+  ],
+  "author": "compilr.dev",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/compilr-dev/editor.git"
+  },
+  "homepage": "https://github.com/compilr-dev/editor",
+  "bugs": {
+    "url": "https://github.com/compilr-dev/editor/issues"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "dependencies": {
+    "@compilr-dev/editor-core": "file:../compilr-dev-editor-core"
+  },
+  "peerDependencies": {
+    "@compilr-dev/agents": "^0.1.0"
+  },
+  "peerDependenciesMeta": {
+    "@compilr-dev/agents": {
+      "optional": true
+    }
+  },
+  "devDependencies": {
+    "@types/node": "^20.10.0",
+    "eslint": "^8.55.0",
+    "@typescript-eslint/eslint-plugin": "^6.13.0",
+    "@typescript-eslint/parser": "^6.13.0",
+    "typescript": "^5.3.0",
+    "vitest": "^1.0.0"
+  }
+}
